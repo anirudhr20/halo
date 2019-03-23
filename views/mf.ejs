@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+        <style>
+                .grafico {
+                    min-width: 310px;
+                    max-width: 400px;
+                    height: 280px;
+                    margin: 0 auto
+                }
+                
+                .main-header {
+                    font-size: x-large;
+                    color : #888;
+                    font-family: Verdana;
+                    margin-bottom: 20px;
+                }
+                
+                .destaque {
+                    color: #f88;
+                    font-weight: bolder;
+                }
+                
+                .highcharts-tooltip h3 {
+                    margin: 0.3em 0;
+                }
+                </style>
+                
+                
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="main-header">Patient : <span class="destaque"><%= name%></span></div>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-3">
+                        
+                        <div class="panel panel-info">
+                          <div class="panel-heading">
+                            <div class="row">
+                              <div class="col-xs-6">
+                                <i class="fa fa-list-ol fa-5x"></i>
+                              </div>
+                              <div class="col-xs-6 text-right">
+                                <p class="announcement-heading"> <strong> <%= heartRate%></strong></p>
+                                <p class="announcement-text"></p>
+                              </div>
+                            </div>
+                          </div>
+                          <a href="#">
+                            <div class="panel-footer announcement-bottom">
+                              <div class="row">
+                                <div class="col-xs-6">
+                                  Heart Rate
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                  <i class="fa fa-arrow-circle-right"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    
+                
+                    <div class="col-md-3">
+                        
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <div class="row">
+                              <div class="col-xs-6">
+                                <i class="fa fa-usd fa-5x"></i>
+                              </div>
+                              <div class="col-xs-6 text-right">
+                                <p class="announcement-heading"> <%= age%></p>
+                                <p class="announcement-text"></p>
+                              </div>
+                            </div>
+                          </div>
+                          <a href="#">
+                            <div class="panel-footer announcement-bottom">
+                              <div class="row">
+                                <div class="col-xs-6">
+                                  Age
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                  <i class="fa fa-arrow-circle-right"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        
+                    </div>	
+                    
+                    
+                
+                    <div class="col-md-3">
+                        
+                        <div class="panel panel-warning">
+                          <div class="panel-heading">
+                            <div class="row">
+                              <div class="col-xs-6">
+                                <i class="fa fa-line-chart fa-5x"></i>
+                              </div>
+                              <div class="col-xs-6 text-right">
+                                <p class="announcement-heading"> </p>
+                                <p class="announcement-text"><%= symptoms%></p>
+                              </div>
+                            </div>
+                          </div>
+                          <a href="#">
+                            <div class="panel-footer announcement-bottom">
+                              <div class="row">
+                                <div class="col-xs-6">
+                                  Symptoms
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                  <i class="fa fa-arrow-circle-right"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        
+                    </div>		
+                    
+                    
+                
+                
+                    <div class="col-md-3">
+                    <form action="/dashboard/Lohith" method="post">
+                        <style>#med{
+                            border-radius:5px
+                        }
+
+                        
+                        
+                        </style>   
+                        <p id="tex"> <strong> Medicines </strong> </p><input type="text" id="med" name="medicines" value="<%= medicines%>"> 
+                                            
+                                            <p>
+                                                    <input type="submit" value="Update">
+                        </p>
+                    
+                    </form>  
+                    </div>			
+                    
+                    <div class="col-md-6">
+                        <div id='grafico1' class="grafico"></div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div id='grafico2' class="grafico"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id='grafico3' class="grafico"></div>
+                    </div>
+                        <div class="col-md-6">
+                        <div id='grafico4' class="grafico" style="height: 400px;"></div>
+                    </div>
+                
+                    
+                </div>
+</body>
+</html>
